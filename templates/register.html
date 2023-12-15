@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Register Page
+{% endblock %}
+
+{% block content %}
+<body>
+    <div class="container">
+        <form action="/regi" method="post" style="color:white">
+            <input type="hidden" name="type" value="register">
+            <!--Here is the icon.-->
+            <div class="circular-icon">
+                <img class="mb-4" src="http://149.84.154.206:8080/templates/327f255924bb4b3ada613b49667f064b.jpg" alt="">
+            </div>
+            <!--Here is the main heading-->
+            <h1 class="h3 mb-3 font-weight-normal">
+                Please Create your Account
+            </h1>
+
+            <br>
+            <div>
+                <label for="username">Username:</label>
+                <br>
+                <input type="text" id="username" name="username" required>
+            </div>
+            
+            <div>
+                <label for="email">Email Address:</label>
+                <br>
+                <input type="email" id="email" name="email" required>
+            </div>
+    
+            <div>
+                <label for="password1">Password:</label>
+                <br>
+                <input type="password" id="password1" name="password1" required>
+            </div>
+    
+            <div>
+                <label for="password2">Password Confirmation:</label>
+                <br>
+                <input type="password" id="password2" name="password2" required>
+            </div>
+    
+            <input type="submit" value="Create Account" style="background-color: rgb(19, 19, 51); color: white;">
+            <br>
+
+            
+        </form>
+    </div>
+</body>
+
+    <!-- CSS Styles for Circular Icon -->
+    <style>
+        .circular-icon {
+            border-radius: 50%;
+            overflow: hidden;
+            width: 200px; /* Adjust the width as needed */
+            height: 200px; /* Adjust the height as needed */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for a visual effect */
+            margin: 0 auto; /* Center the circular icon */
+        }
+
+        .circular-icon img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+{% endblock %}

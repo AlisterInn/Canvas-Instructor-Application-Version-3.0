@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Tests Page
+{% endblock %}
+
+{% block content %}
+    <h1>Tests Page</h1>
+    <l1>Post tests to all of your class!</l1>
+    <table class="table table-hover table-dark">
+      <thead>
+        <tr>
+          <!--Your Column here-->
+          <th scope="col">ID</th>
+          <th scope="col">name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!--Your rows inside the table here-->
+        {% for test in tests %}
+        <tr>
+          <td>{{ test.testn }}</td>
+          <td>{{ test.title }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <form action="/tes", method="post">
+      <label for="title">Add New Test</label>
+      <input type="text" name="title" required>
+      <input type="hidden" name="type" value="test">
+      <button type="submit">Add</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Assignment Page
+{% endblock %}
+
+{% block content %}
+    <h1>Assignments Page</h1>
+    <l1>Assign assignmets to your students</l1>
+    <table class="table table-hover table-dark">
+      <thead>
+        <tr>
+          <!--Your Column here-->
+          <th scope="col">ID</th>
+          <th scope="col">name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!--Your rows inside the table here-->
+        {% for assignment in assignments %}
+        <tr>
+          <td>{{ assignment.assi }}</td>
+          <td>{{ assignment.title }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <form action="/asg", method="post">
+      <label for="title">Add New Assignment</label>
+      <input type="text" name="title" required>
+      <input type="hidden" name="type" value="assignment">
+      <button type="submit">Add</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block content %}
+<!--CSS code for centering the content-->
+<style>
+    /* Center content horizontally */
+    .center-container {
+        text-align: center;
+    }
+
+    /* Center the image */
+    .center-container img {
+        display: block;
+        margin: 0 auto;
+        border-radius: 50%; /* Make the image circular */
+    }
+</style>
+
+<div class="center-container">
+    <img src="http://149.84.154.206:8080/templates/e17ef950626ab2362e91f519215ba53f.gif">
+    This is Canvas Instructor, an application for teachers to make their life easier. 
+    Here you can keep track of your students, post new assignments and add tests as well.
+       But firstly register!!
+</div>
+    
+
+{% endblock %}

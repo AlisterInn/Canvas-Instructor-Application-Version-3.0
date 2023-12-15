@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Student Page
+{% endblock %}
+
+{% block content %}
+    <h1>Students Page</h1>
+    <L1>And here is your class, you can also add new stdunts if you like!</L1>
+    <table class="table table-hover table-dark">
+      <thead>
+        <tr>
+          <!--Your Column here-->
+          <th scope="col">ID</th>
+          <th scope="col">name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!--Your rows inside the table here-->
+        {% for student in students %}
+        <tr>
+          <td>{{ student.id }}</td>
+          <td>{{ student.name }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <form action="/stud", method="post">
+      <label for="name">Add New Student</label>
+      <input type="text" name="name" required>
+      <input type="hidden" name="type" value="student">
+      <button type="submit">Add</button>
+    </form>
+{% endblock %}
